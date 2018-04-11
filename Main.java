@@ -3,7 +3,7 @@
 public class MyClass {
     static String oItemS1[] = {"a","b","c","d"};
     static Double oPriceS1[] = {10.00, 5.55, 9.00, 2.00};
-    static String itemS1[] = {"a", "c", "d"};
+    static String itemS1[] = {"a", "b", "c", "d"};
     static Double priceS1[] = {10.00, 10.00, 10.00};
     int lies =0;
     
