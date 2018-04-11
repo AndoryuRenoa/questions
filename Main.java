@@ -1,4 +1,4 @@
-// Array Riddle
+//array riddle
 
 public class MyClass {
     static String oItemS1[] = {"a","b","c","d"};
@@ -11,7 +11,7 @@ public class MyClass {
     int oItemLength = oItem.length;
     int itemLength = item.length;
     for (int i=0; i<oItemLength; i++){
-      for (int a=0; i<itemLength; a++){
+      for (int a=0; a<itemLength; a++){
         if (oItem[i].equals(item[a])){ // silly syntax error caused all my problems
           if (oPrice[i] != price[a]){
             lies++;
