@@ -1,6 +1,6 @@
-//array riddle -- I have no idea why this outputs 3 lies instead of 2. I'm completely stumped.
+//array riddle -- Two stupid syntax errors is what tripped me up here.
 
-class Main { 
+public class Main { 
     static String oItemS1[] = {"a","b","c","d"};
     static Double oPriceS1[] = {10.00, 5.55, 9.00, 2.00};
     static String itemS1[] = {"a", "c", "d"};
@@ -15,7 +15,7 @@ class Main {
     for (int i=0; i<oItemLength; i++){
       for (int a=0; a<itemLength; a++){
         if (oItem[i].equals(item[a])){ // silly syntax error
-          if (oPrice[i] != price[a]){
+          if (oPrice[i].doubleValue() != price[a].doubleValue()){ //another stupid syntax error
             lies++;
           }
         }
