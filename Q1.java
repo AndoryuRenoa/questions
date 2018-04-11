@@ -1,6 +1,6 @@
 //array riddle -- Two stupid syntax errors is what tripped me up here.
 
-public class Main { 
+public class Q1 { 
     static String oItemS1[] = {"a","b","c","d"};
     static Double oPriceS1[] = {10.00, 5.55, 9.00, 2.00};
     static String itemS1[] = {"a", "c", "d"};
@@ -32,7 +32,7 @@ public class Main {
 
     
     public static void main(String args[]) {
-        Main myClass = new Main();
+        Q1 myClass = new Q1();
         myClass.solvePuzzle (oItemS1, oPriceS1, itemS1, priceS1);
         System.out.println(myClass.lies);
         System.out.println(myClass.test);
