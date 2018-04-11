@@ -21,12 +21,6 @@ public class Q1 {
         }
       }
     }
-    if (oPrice[0] == price[0]){
-        test = true;
-    }
-    if (10.00 == 10.00){
-        test2 = true;
-    }
   }
 
 
@@ -35,11 +29,6 @@ public class Q1 {
         Q1 myClass = new Q1();
         myClass.solvePuzzle (oItemS1, oPriceS1, itemS1, priceS1);
         System.out.println(myClass.lies);
-        System.out.println(myClass.test);
-        System.out.println(myClass.test2);
-        System.out.println(oPriceS1[0]);
-        System.out.println(priceS1[0]);
-        System.out.println("Why?!?!?!");
         
     }
 }
