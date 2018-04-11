@@ -1,4 +1,4 @@
-//array riddle
+//array riddle -- I have no idea why this outputs 3 lies instead of 2. I'm completely stumped.
 
 public class MyClass {
     static String oItemS1[] = {"a","b","c","d"};
@@ -12,14 +12,13 @@ public class MyClass {
     int itemLength = item.length;
     for (int i=0; i<oItemLength; i++){
       for (int a=0; a<itemLength; a++){
-        if (oItem[i].equals(item[a])){ // silly syntax error caused all my problems
+        if (oItem[i].equals(item[a])){ // silly syntax error
           if (oPrice[i] != price[a]){
             lies++;
           }
         }
       }
     }
-    
   }
 
 
