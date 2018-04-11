@@ -9,7 +9,7 @@ public class Q1 {
     boolean test = false;
     boolean test2 = false;
     
-    private void solvePuzzle (String oItem[], Double oPrice[], String item[], Double price[]) {
+    private int solvePuzzle (String oItem[], Double oPrice[], String item[], Double price[]) {
     int oItemLength = oItem.length;
     int itemLength = item.length;
     for (int i=0; i<oItemLength; i++){
@@ -21,6 +21,7 @@ public class Q1 {
         }
       }
     }
+        return lies;
   }
 
 
