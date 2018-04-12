@@ -1,2 +1,2 @@
 # questions
-Minimal Code for Asking Questions on StackOverflow
+Minimal Code for Asking Questions or Solving Puzzles
