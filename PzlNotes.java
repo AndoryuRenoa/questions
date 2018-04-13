@@ -59,10 +59,10 @@ public class Solution {
                 
             }
             for (int z=0; z<arr.size(); z++){
-                sum = sum.add(arr.get(z));
+                BigInteger b = BigInteger.valueOf(arr.get(z));
+                sum = sum.add(b);
             }
             System.out.println(sum);
         }
     } 
 }
-
