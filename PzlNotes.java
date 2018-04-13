@@ -42,15 +42,15 @@ class Solution{
     }
 }
 
-// different puzzle:
+// different puzzle (still get timeout error on two cases) Long is too small BigInteger causes problems.
 public class Solution {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
         for(int a0 = 0; a0 < t; a0++){
-            int n = in.nextInt();
-            int sum= 0;
+            long n = in.nextLong();
+            BigInteger sum= BigInteger.valueOf(0);
             ArrayList<Integer> arr = new ArrayList<Integer>() ;
             for (int i = 0; i<n; i++){
                 if (i % 3 == 0 || i % 5 == 0){
@@ -59,9 +59,10 @@ public class Solution {
                 
             }
             for (int z=0; z<arr.size(); z++){
-                sum = sum+arr.get(z);
+                sum = sum.add(arr.get(z));
             }
             System.out.println(sum);
         }
     } 
 }
+
