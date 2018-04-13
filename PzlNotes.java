@@ -41,3 +41,27 @@ class Solution{
         in.close();
     }
 }
+
+// different puzzle:
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int a0 = 0; a0 < t; a0++){
+            int n = in.nextInt();
+            int sum= 0;
+            ArrayList<Integer> arr = new ArrayList<Integer>() ;
+            for (int i = 0; i<n; i++){
+                if (i % 3 == 0 || i % 5 == 0){
+                    arr.add(i);
+                }
+                
+            }
+            for (int z=0; z<arr.size(); z++){
+                sum = sum+arr.get(z);
+            }
+            System.out.println(sum);
+        }
+    } 
+}
