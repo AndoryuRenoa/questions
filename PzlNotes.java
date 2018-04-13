@@ -43,24 +43,24 @@ class Solution{
 }
 
 // different puzzle (still get timeout error on two cases) Long is too small BigInteger causes problems.
+
 public class Solution {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
         for(int a0 = 0; a0 < t; a0++){
-            long n = in.nextLong();
+            BigInteger n = in.nextBigInteger();
             BigInteger sum= BigInteger.valueOf(0);
-            ArrayList<Integer> arr = new ArrayList<Integer>() ;
-            for (int i = 0; i<n; i++){
-                if (i % 3 == 0 || i % 5 == 0){
+            ArrayList<BigInteger> arr = new ArrayList<BigInteger>() ;
+            for (BigInteger i = BigInteger.valueOf(0); i.compareTo(n)<0; i.add(BigInteger.ONE)){
+                if (i.remainder(BigInteger.valueOf(3)) == BigInteger.valueOf(0) || i.remainder(BigInteger.valueOf(5)) == BigInteger.valueOf(0)){
                     arr.add(i);
                 }
                 
             }
             for (int z=0; z<arr.size(); z++){
-                BigInteger b = BigInteger.valueOf(arr.get(z));
-                sum = sum.add(b);
+                sum = sum.add(arr.get(z));
             }
             System.out.println(sum);
         }
