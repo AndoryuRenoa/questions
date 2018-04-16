@@ -66,3 +66,8 @@ public class Solution {
         }
     } 
 }
+// hourglass puzzle
+/*
+* setup if statement for length of 1st D & 2nd D & define hourglass shape. Create arraylist for input, create for
+* statement to get largest sum in arraylist. easy day
+*/
