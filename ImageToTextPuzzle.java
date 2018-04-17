@@ -19,6 +19,7 @@ private String testForB (p[x][y]){
 *  pat[7][0-1] pat[6][6-7]
 * pat[8][0-1] pat[8][5-6]
 * pat[9][0-5]
+* Also important to note that areas outside of this will not be black as some letters may have overlap
 */
   return b;
 }
