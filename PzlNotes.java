@@ -71,3 +71,19 @@ public class Solution {
 * setup if statement for length of 1st D & 2nd D & define hourglass shape. Create arraylist for input, create for
 * statement to get largest sum in arraylist. easy day
 */
+
+//diag puzzle:
+    static int diagonalDifference(int[][] a) {
+      // okay, let's see
+        int length = a.length;
+        int sumrl  = 0;
+        int sumlr = 0;
+        int sumdiag = 0;
+        for (int i = 0; i<length; i++){
+            sumrl = a[i][i] +sumrl;
+            sumlr = a[length-1-i][i];
+        }
+        sumdiag = Math.abs(sumrl-sumlr);
+        return sumdiag;
+
+    }
