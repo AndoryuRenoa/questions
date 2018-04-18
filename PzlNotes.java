@@ -72,18 +72,26 @@ public class Solution {
 * statement to get largest sum in arraylist. easy day
 */
 
-//diag puzzle:
-    static int diagonalDifference(int[][] a) {
-      // okay, let's see
-        int length = a.length;
-        int sumrl  = 0;
-        int sumlr = 0;
-        int sumdiag = 0;
+//ratio puzzle:
+    static void plusMinus(int[] arr) {
+        int pNum=0;
+        int zNum=0;
+        int nNum=0;
+        int length = arr.length;
+        float answer = 0;
         for (int i = 0; i<length; i++){
-            sumrl = a[i][i] +sumrl;
-            sumlr = a[length-1-i][i];
+            if(arr[i]>0){
+                pNum ++;
+            }else if (arr[i]==0){
+                zNum++;
+            }else{
+                nNum++;
+            }
         }
-        sumdiag = Math.abs(sumrl-sumlr);
-        return sumdiag;
-
+            answer = pNum/length;
+            System.out.println(answer);
+            answer = zNum/length;
+            System.out.println(answer);
+            answer = nNum/length;
+            System.out.println(answer);
     }
