@@ -72,23 +72,4 @@ public class Solution {
 * statement to get largest sum in arraylist. easy day
 */
 
-//staircase puzzle: (current result is opposite because it wants printf output) 
-public class Solution {
-
-    static void staircase(int n) {
-        String hash= "#";
-        for (int i=0; i<n;i++){
-            System.out.println(String.join("", Collections.nCopies(i+1, "#")));
-        }
-
-    }
-// alternate output with syntax error:
-     static void staircase(int n) {
-        String hash= "#";
-        for (int i=0; i<n;i++){
-            System.out.printf("%"n"s",String.join("", Collections.nCopies(i+1, "#")) );
-        }
-
-    }
-
-
+//next puzzle:
