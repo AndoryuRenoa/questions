@@ -72,14 +72,36 @@ public class Solution {
 * statement to get largest sum in arraylist. easy day
 */
 
-//sums except self array problem:(doesn't pass all tests) tried converting to long but still doesn't pass all cases
-    static void miniMaxSum(int[] arr) {
-        long[] sums = new long [5];
-        for (int i=0; i<5; i++){
-            sums[i] =  (long)IntStream.of(arr).sum()-(long)arr[i];
+//calendar puzzle: (wrong output);
+import java.util.Calendar;
+
+public class Solution {
+    public static String getDay(String day, String month, String year) {
+        Calendar c = Calendar.getInstance();
+        c.set(Integer.parseInt(day), Integer.parseInt(month), Integer.parseInt(year));
+        int d = c.get(Calendar.DAY_OF_WEEK);
+        String s = "";
+        if (d == 1){
+            s = "SUNDAY";
         }
-        System.out.print(LongStream.of(sums).min().getAsLong());
-        System.out.print(" ");
-        System.out.print(LongStream.of(sums).max().getAsLong());
+                if (d ==2){
+            s = "MONDAY";
+        }
+                if (d ==3){
+            s = "TUESDAY";
+        }
+                if (d ==4){
+            s = "WEDNESDAY";
+        }
+                if (d ==5){
+            s = "THURSDAY";
+        }
+                if (d ==6){
+            s = "FRIDAY";
+        }
+                if (d ==7){
+            s = "SATURDAY";
+        }
+        return s;
     }
 
