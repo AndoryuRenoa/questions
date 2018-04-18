@@ -72,12 +72,9 @@ public class Solution {
 * statement to get largest sum in arraylist. easy day
 */
 
-//staircase puzzle:
+//staircase puzzle: (current result is opposite because it wants printf output) 
 public class Solution {
 
-    /*
-     * Complete the staircase function below.
-     */
     static void staircase(int n) {
         String hash= "#";
         for (int i=0; i<n;i++){
@@ -85,13 +82,4 @@ public class Solution {
         }
 
     }
-
-    private static final Scanner scan = new Scanner(System.in);
-
-    public static void main(String[] args) {
-        int n = Integer.parseInt(scan.nextLine().trim());
-
-        staircase(n);
-    }
-}
 
