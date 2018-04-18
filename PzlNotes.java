@@ -72,13 +72,14 @@ public class Solution {
 * statement to get largest sum in arraylist. easy day
 */
 
-//sums except self array problem:(doesn't pass all tests)
+//sums except self array problem:(doesn't pass all tests) tried converting to long but still doesn't pass all cases
     static void miniMaxSum(int[] arr) {
-        int[] sums = new int [5];
+        long[] sums = new long [5];
         for (int i=0; i<5; i++){
-            sums[i] =  IntStream.of(arr).sum()-arr[i];
+            sums[i] =  (long)IntStream.of(arr).sum()-(long)arr[i];
         }
-        System.out.print(IntStream.of(sums).min().getAsInt());
+        System.out.print(LongStream.of(sums).min().getAsLong());
         System.out.print(" ");
-        System.out.print(IntStream.of(sums).max().getAsInt());
+        System.out.print(LongStream.of(sums).max().getAsLong());
     }
+
