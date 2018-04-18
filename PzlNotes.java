@@ -72,26 +72,26 @@ public class Solution {
 * statement to get largest sum in arraylist. easy day
 */
 
-//ratio puzzle:
-    static void plusMinus(int[] arr) {
-        int pNum=0;
-        int zNum=0;
-        int nNum=0;
-        int length = arr.length;
-        float answer = 0;
-        for (int i = 0; i<length; i++){
-            if(arr[i]>0){
-                pNum ++;
-            }else if (arr[i]==0){
-                zNum++;
-            }else{
-                nNum++;
-            }
+//staircase puzzle:
+public class Solution {
+
+    /*
+     * Complete the staircase function below.
+     */
+    static void staircase(int n) {
+        String hash= "#";
+        for (int i=0; i<n;i++){
+            System.out.println(String.join("", Collections.nCopies(i+1, "#")));
         }
-            answer = pNum/length;
-            System.out.println(answer);
-            answer = zNum/length;
-            System.out.println(answer);
-            answer = nNum/length;
-            System.out.println(answer);
+
     }
+
+    private static final Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int n = Integer.parseInt(scan.nextLine().trim());
+
+        staircase(n);
+    }
+}
+
