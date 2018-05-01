@@ -1,5 +1,6 @@
-// This is taken from: http://mrbool.com/manipulating-clipboard-content-with-java/24758
-// could be used to strip copied iscis of spaces / dashes / parenthesis
+// isci trimmer/stripper for clipboard
+//  Inspired by: http://mrbool.com/manipulating-clipboard-content-with-java/24758
+
 
 
 import java.awt.Toolkit; 
@@ -13,8 +14,18 @@ public class ClipBoard { public static void main(String args[]) {
    try { 
      if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) { 
         String text = (String)t.getTransferData(DataFlavor.stringFlavor); 
-        text=text.toUpperCase(); StringSelection ss = new StringSelection(text);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null); 
+        text=text.toUpperCase(); 
+        StringBuffer sb = new StringBuffer(text);
+        sb.replace(" ","");
+        sb.replace("-","");
+        sb.replace("(","");
+        sb.replace(")","");
+        sb.replace("_","");
+        sb.replace("[","");
+        sb.replace("]","");
+        sb.replace("{","");
+        sb.replace("}","");
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sb, null); 
       } 
     }catch (Exception e) {
      
