@@ -9,7 +9,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable; 
 
 
-public class ClipBoard { public static void main(String args[]) {
+public class ClipManip { public static void main(String args[]) {
   Transferable t = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null); 
    try { 
      if (t != null && t.isDataFlavorSupported(DataFlavor.stringFlavor)) { 
