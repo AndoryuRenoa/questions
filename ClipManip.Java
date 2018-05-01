@@ -2,7 +2,8 @@
 // could be used to strip copied iscis of spaces / dashes / parenthesis
 
 
-import java.awt.Toolkit; import java.awt.datatransfer.DataFlavor; 
+import java.awt.Toolkit; 
+import java.awt.datatransfer.DataFlavor; 
 import java.awt.datatransfer.StringSelection; 
 import java.awt.datatransfer.Transferable; 
 
