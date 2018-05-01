@@ -205,6 +205,8 @@ public final class HSSFReadWrite {
             *   **strip the isci**
             *   cell.setCellValue(isci);
 	    *}
+	    * obviously this needs to be reworked to remove the different arg lengths. This would only ever do one task.
+	    * in args.length3 there is an example for writing out to the file for completion.
             */
 																	}
 							}
