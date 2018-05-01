@@ -25,6 +25,8 @@ public class ClipBoard { public static void main(String args[]) {
         sb.replace("]","");
         sb.replace("{","");
         sb.replace("}","");
+        sb.replace("/","");
+        sb.replace("\","");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(sb, null); 
       } 
     }catch (Exception e) {
