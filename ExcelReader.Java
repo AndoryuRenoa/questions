@@ -203,5 +203,56 @@ public final class HSSFReadWrite {
             *   row = row.getCell(c);
             *   isci = cell.getStringCellValue();
             *   **strip the isci**
-            *   methodForWritingOverCellValue(isci);
+            *   cell.setCellValue(isci);
             */
+																	}
+							}
+						}
+					}
+				}
+			} else if (args.length == 2) {
+				if (args[1].toLowerCase(Locale.ROOT).equals("write")) {
+					System.out.println("Write mode");
+					long time = System.currentTimeMillis();
+					HSSFReadWrite.testCreateSampleSheet(fileName);
+
+					System.out.println("" + (System.currentTimeMillis() - time)
+							+ " ms generation time");
+				} else {
+					System.out.println("readwrite test");
+					try (HSSFWorkbook wb = HSSFReadWrite.readFile(fileName)) {
+						try (FileOutputStream stream = new FileOutputStream(args[1])) {
+							wb.write(stream);
+						}
+					}
+				}
+			} else if (args.length == 3 && args[2].equalsIgnoreCase("modify1")) {
+				// delete row 0-24, row 74 - 99 && change cell 3 on row 39 to string "MODIFIED CELL!!"
+
+				try (HSSFWorkbook wb = HSSFReadWrite.readFile(fileName)) {
+					HSSFSheet sheet = wb.getSheetAt(0);
+
+					for (int k = 0; k < 25; k++) {
+						HSSFRow row = sheet.getRow(k);
+
+						sheet.removeRow(row);
+					}
+					for (int k = 74; k < 100; k++) {
+						HSSFRow row = sheet.getRow(k);
+
+						sheet.removeRow(row);
+					}
+					HSSFRow row = sheet.getRow(39);
+					HSSFCell cell = row.getCell(3);
+					cell.setCellValue("MODIFIED CELL!!!!!");
+
+					try (FileOutputStream stream = new FileOutputStream(args[1])) {
+						wb.write(stream);
+					}
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
