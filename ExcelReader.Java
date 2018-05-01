@@ -204,6 +204,7 @@ public final class HSSFReadWrite {
             *   isci = cell.getStringCellValue();
             *   **strip the isci**
             *   cell.setCellValue(isci);
+	    *}
             */
 																	}
 							}
