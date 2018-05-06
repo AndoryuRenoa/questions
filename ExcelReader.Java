@@ -1,6 +1,7 @@
 // This is an excerpt from Apachi's HSSF API documentation:
 //http://svn.apache.org/repos/asf/poi/trunk/src/examples/src/org/apache/poi/hssf/usermodel/examples/HSSFReadWrite.java
 // more reading: https://poi.apache.org/spreadsheet/quick-guide.html
+// .net would make this all a lot easier
 
 package org.apache.poi.hssf.usermodel.examples;
 
