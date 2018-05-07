@@ -1,3 +1,6 @@
+' using excel in vbas:
+' https://support.microsoft.com/en-us/help/302084/how-to-automate-microsoft-excel-from-microsoft-visual-c-net
+
 ' to hunt down starting directory and open a file:
 
 Dim fileName as String = "yourfile.txt"
