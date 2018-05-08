@@ -7,7 +7,7 @@ Sub test()
 'should include variables:
 lastCol = ActiveSheet.Range("a1").End(xlToRight).Column
 lastRow = ActiveSheet.Cells(65536, lastCol).End(xlUp).Row
-lastRowNum =
+lastRowNum = Range("G2").CurrentRegion.Rows.Count
 'this will allow entire ranges to be selected instead of what is limited by recording the macro
 ' https://stackoverflow.com/questions/4850738/how-to-select-all-the-cells-in-a-worksheet-in-excel-range-object-of-c
 ' https://support.microsoft.com/en-us/help/291308/how-to-select-cells-ranges-by-using-visual-basic-procedures-in-excel
@@ -49,7 +49,7 @@ lastRowNum =
     ActiveCell.FormulaR1C1 = _
                                             "=VLOOKUP(RC[1],'[BOBReportTest.xlsx]2Q 2018'!C1:C11,5,FALSE)"
                             '*Dangerous does not select bottom simply largest selection possible I think
-    Selection.AutoFill Destination:=Range("G2").CurrentRegion.Rows.Count
+    Selection.AutoFill Destination:=Range("G2:G" & lastRowNum - 2)
     ActiveSheet.Range("G2").End(xlDown).Select
     Columns("G:G").Select
     Columns("G:G").EntireColumn.AutoFit
@@ -67,10 +67,6 @@ lastRowNum =
     Application.Top = 40.75
     ActiveWindow.SmallScroll Down:=21
 End Sub
-
-
-
-
 
 
 
