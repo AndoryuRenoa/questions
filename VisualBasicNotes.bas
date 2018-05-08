@@ -15,18 +15,21 @@ Process.Start(appDir & "\" & fileName)
 '
 '
 'should include variables:
-'lastCol =
-'lastRow =
+'lastCol = ActiveSheet.Range("a1").End(xlToRight).Column
+'lastRow = ActiveSheet.Cells(65536, lastCol).End(xlUp).Row
 'this will allow entire ranges to be selected instead of what is limited by recording the macro
 ' https://stackoverflow.com/questions/4850738/how-to-select-all-the-cells-in-a-worksheet-in-excel-range-object-of-c
 ' https://support.microsoft.com/en-us/help/291308/how-to-select-cells-ranges-by-using-visual-basic-procedures-in-excel
 ' below is a recorded macro for merging p-logs process
-' alternatively : ActiveSheet.Range("a1").CurrentRegion.Select
+' ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).Select
+' alternatively : ActiveSheet.Range("a1").CurrentRegion.Select however will not work if blank rows/columns etc
     Rows("1:1").Select
     Selection.Delete Shift:=xlUp
     Cells.Select
     Selection.AutoFilter
+        ' V replace with ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).Select
     ActiveSheet.Range("$A$1:$R$12227").AutoFilter Field:=1, Criteria1:="="
+        ' V replace with Rows (lastRow) however need to check if last row is actually last row i think it is due to .End(xlUp)
     Rows("12227:12227").Select
     Selection.Delete Shift:=xlUp
     ActiveSheet.Range("$A$1:$R$12226").AutoFilter Field:=1
@@ -50,12 +53,12 @@ Process.Start(appDir & "\" & fileName)
         TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
         Semicolon:=False, Comma:=False, Space:=False, Other:=True, OtherChar _
         :="-", FieldInfo:=Array(Array(1, 1), Array(2, 1)), TrailingMinusNumbers:=True
-    Windows("PreLogs 5.4.xlsx").Activate
+                                        Windows("PreLogsTest.xlsx").Activate
     Range("G2").Select
     Application.CutCopyMode = False
     Application.CutCopyMode = False
     ActiveCell.FormulaR1C1 = _
-        "=VLOOKUP(RC[1],'[BOBReport5.3.xlsx]2Q 2018'!C1:C11,5,FALSE)"
+                                            "=VLOOKUP(RC[1],'[BOBReportTest.xlsx]2Q 2018'!C1:C11,5,FALSE)"
     Selection.AutoFill Destination:=Range("G2:G12226")
     Range("G2:G12226").Select
     Columns("G:G").Select
