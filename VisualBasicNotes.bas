@@ -13,8 +13,13 @@ Process.Start(appDir & "\" & fileName)
 '
 ' PreLogComb Macro
 '
-
 '
+'should include variables:
+'lastCol =
+'lastRow =
+'this will allow entire ranges to be selected instead of what is limited by recording the macro
+' https://stackoverflow.com/questions/4850738/how-to-select-all-the-cells-in-a-worksheet-in-excel-range-object-of-c
+' https://support.microsoft.com/en-us/help/291308/how-to-select-cells-ranges-by-using-visual-basic-procedures-in-excel
     Rows("1:1").Select
     Selection.Delete Shift:=xlUp
     Cells.Select
