@@ -68,4 +68,37 @@ Process.Start(appDir & "\" & fileName)
     ActiveWindow.SmallScroll Down:=21
 End Sub
 
+Sub SendEmail()
+Dim strFile As String
+Dim OutApp As Outlook.Application
+Dim objOutlookMsg As Outlook.MailItem
+Dim objOutlookRecip As Recipient
+Dim Recipients As Recipients
+
+  Set OutApp = CreateObject("Outlook.Application")
+  Set objOutlookMsg = OutApp.CreateItem(olMailItem)
+
+  strFile = "C:\temp\myfile.xlsx"
+  ActiveWorkbook.SaveAs strFile
+
+  Set Recipients = objOutlookMsg.Recipients
+  Set objOutlookRecip = Recipients.Add("Kelly.Lucas@dish.com")
+  objOutlookRecip.Type = 1
+
+  With objOutlookMsg
+    .SentOnBehalfOfName = "Andrew.Lenoir@dish.com"
+    .Subject = "Testing this macro"
+    .HTMLBody = "Testing this macro" & vbCrLf & vbCrLf
+    'Resolve each Recipient's name.
+    For Each objOutlookRecip In objOutlookMsg.Recipients
+      objOutlookRecip.Resolve
+    Next
+    .Attachments.Add strFile
+    .display
+  End With
+
+  'objOutlookMsg.Send
+  Set OutApp = Nothing
+End Sub
+
 
