@@ -21,6 +21,7 @@ Process.Start(appDir & "\" & fileName)
 ' https://stackoverflow.com/questions/4850738/how-to-select-all-the-cells-in-a-worksheet-in-excel-range-object-of-c
 ' https://support.microsoft.com/en-us/help/291308/how-to-select-cells-ranges-by-using-visual-basic-procedures-in-excel
 ' below is a recorded macro for merging p-logs process
+' alternatively : ActiveSheet.Range("a1").CurrentRegion.Select
     Rows("1:1").Select
     Selection.Delete Shift:=xlUp
     Cells.Select
