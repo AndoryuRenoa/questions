@@ -86,7 +86,7 @@ Dim Recipients As Recipients
   objOutlookRecip.Type = 1
 
   With objOutlookMsg
-    .SentOnBehalfOfName = "Andrew.Lenoir@dish.com"
+    .SentOnBehalfOfName = "Andrew.XXX@XXX.com"
     .Subject = "Testing this macro"
     .HTMLBody = "Testing this macro" & vbCrLf & vbCrLf
     'Resolve each Recipient's name.
