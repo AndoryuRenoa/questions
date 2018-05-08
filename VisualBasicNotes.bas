@@ -20,7 +20,7 @@ lastRowNum = Range("G2").CurrentRegion.Rows.Count
     Selection.AutoFilter
         ' V replace with ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).Select
     ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).AutoFilter Field:=1, Criteria1:="="
-        ' V replace with Rows (lastRow) however need to check if last row is actually last row i think it is due to .End(xlUp)
+        ' V replace with Rows (lastRowNum) ???
     Rows("12227:12227").Select
     Selection.Delete Shift:=xlUp
     ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).AutoFilter Field:=1
