@@ -67,7 +67,7 @@ Process.Start(appDir & "\" & fileName)
     Application.Top = 40.75
     ActiveWindow.SmallScroll Down:=21
 End Sub
-
+'below is a sample macro for sending email from excel in vba
 Sub SendEmail()
 Dim strFile As String
 Dim OutApp As Outlook.Application
@@ -82,7 +82,7 @@ Dim Recipients As Recipients
   ActiveWorkbook.SaveAs strFile
 
   Set Recipients = objOutlookMsg.Recipients
-  Set objOutlookRecip = Recipients.Add("Kelly.Lucas@dish.com")
+  Set objOutlookRecip = Recipients.Add("Kelly.XXX@XXX.com")
   objOutlookRecip.Type = 1
 
   With objOutlookMsg
