@@ -20,6 +20,7 @@ Process.Start(appDir & "\" & fileName)
 'this will allow entire ranges to be selected instead of what is limited by recording the macro
 ' https://stackoverflow.com/questions/4850738/how-to-select-all-the-cells-in-a-worksheet-in-excel-range-object-of-c
 ' https://support.microsoft.com/en-us/help/291308/how-to-select-cells-ranges-by-using-visual-basic-procedures-in-excel
+' below is a recorded macro for merging p-logs process
     Rows("1:1").Select
     Selection.Delete Shift:=xlUp
     Cells.Select
@@ -72,6 +73,8 @@ Process.Start(appDir & "\" & fileName)
     Application.Top = 40.75
     ActiveWindow.SmallScroll Down:=21
 End Sub
+                                                        
+                                                        
 'below is a sample macro for sending email from excel in vba
 Sub SendEmail()
 Dim strFile As String
