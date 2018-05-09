@@ -20,7 +20,7 @@ lastRowNum = Range("G2").CurrentRegion.Rows.Count
     Selection.AutoFilter
         ' V replace with ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).Select
     ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).AutoFilter Field:=1, Criteria1:="="
-        ' V replace with Rows (lastRowNum) ???
+' V try this Cells(Application.Rows.Count, 1).End(xlUp).Select
     Rows("12227:12227").Select
     Selection.Delete Shift:=xlUp
     ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).AutoFilter Field:=1
