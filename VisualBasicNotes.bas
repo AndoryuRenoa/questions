@@ -1,7 +1,8 @@
+' Macro Name has to match Sub Name
 Sub Merge()
 ' 
 '
-' 
+    ' this code will correctly merge SVR & Bob Reports
 '
 '
 'should include variables:
