@@ -78,7 +78,7 @@ Windows("LogsReport.xlsx").Activate
         Cells.Find(What:="#N/A", After:=ActiveCell, LookIn:=xlFormulas, LookAt _
         :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
         False, SearchFormat:=False).Activate
-        MsgBox "N/A's Are Present! Report is NOT good for Pickle!"
+                                    MsgBox "N/A'S ARE PRESENT. THIS REPORT IS NOT OKAY FOR PICKLE CHECK BOBREPORT"
 RefErr:
                                     Select Case Err.Number
                                     Case 91
