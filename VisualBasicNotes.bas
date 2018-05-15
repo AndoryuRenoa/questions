@@ -79,10 +79,12 @@ Windows("LogsReport.xlsx").Activate
         :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
         False, SearchFormat:=False).Activate
         MsgBox "N/A's Are Present! Report is NOT good for Pickle!"
-                                    RefErr:
+RefErr:
                                     Select Case Err.Number
                                     Case 91
                                         MsgBox "No N/As Present. Report is good for Pickle!"
+                                        End
+                                        End Select
 End Sub
 
                                                         
