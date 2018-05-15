@@ -72,15 +72,17 @@ Windows("LogsReport.xlsx").Activate
     Application.Left = 38.5
     Application.Top = 40.75
     ActiveWindow.SmallScroll Down:=21
-    ' try catch message for if no #N/As are present
-  try
-                                        'search for #N/A
+    ' Cannot use try catch statments in VBA so instead we will use the error number to go to a command line
+                                    On Error GoTo RefErr:
+                                    'search for #N/A will throw an error if not present
         Cells.Find(What:="#N/A", After:=ActiveCell, LookIn:=xlFormulas, LookAt _
         :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
         False, SearchFormat:=False).Activate
         MsgBox "N/A's Are Present! Report is NOT good for Pickle!"
-  catch
-    MsgBox "No N/As Present. Report is good for Pickle!"
+                                    RefErr:
+                                    Select Case Err.Number
+                                    Case 91
+                                        MsgBox "No N/As Present. Report is good for Pickle!"
 End Sub
 
                                                         
