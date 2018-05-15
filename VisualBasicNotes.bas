@@ -6,6 +6,8 @@ Sub Merge()
     ' updated to include Will's name change comment
     ' updated to include Message for if N/As are present or not (current method is dangerous anything that throws error #91 will produce
     ' this message *For future development*)
+    ' may be a good idea to try to activate both windows first, that way if one is missing error will throw prior to any formatting
+    ' including that now
     ' last update to include name changes for dates
 '
 'should include variables:
@@ -16,6 +18,10 @@ lastRowNum = Range("G2").CurrentRegion.Rows.Count
 
 'Changing name to LogsReport
 Windows("LogsReport.xlsx").Activate
+'activating both windows first so error throws prior to formatting if one isn't present or misnamed
+Windows("BOBReport.xlsx").Activate
+Windows("LogsReport.xlsx").Activate
+'Formatting begins below
     Rows("1:1").Select
     Selection.Delete Shift:=xlUp
     Cells.Select
@@ -49,7 +55,7 @@ Windows("LogsReport.xlsx").Activate
     Application.CutCopyMode = False
     Application.CutCopyMode = False
                             '!critical! BOB Report name must match VLOOKUP 2nd Parameter
-                       
+                            ' The below includes "2Q 2018" Need to find a way to replace it prior to quarter change via variable"
                             ActiveCell.FormulaR1C1 = _
                                             "=VLOOKUP(RC[1],'[BOBReport.xlsx]2Q 2018'!C1:C11,5,FALSE)"
                             'notice "-1" due to deleting the report's header
