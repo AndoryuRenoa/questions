@@ -1,6 +1,6 @@
 ' Macro Name has to match Sub Name
 Sub Merge()
-' 
+'
 '
     ' this code will correctly merge SVR & Bob Reports
     ' updated to include Will's name change comment
@@ -72,13 +72,16 @@ Windows("LogsReport.xlsx").Activate
     Application.Left = 38.5
     Application.Top = 40.75
     ActiveWindow.SmallScroll Down:=21
-                                    
+    ' try catch message for if no #N/As are present
+  try
                                         'search for #N/A
         Cells.Find(What:="#N/A", After:=ActiveCell, LookIn:=xlFormulas, LookAt _
         :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
         False, SearchFormat:=False).Activate
+        MsgBox "N/A's Are Present! Report is NOT good for Pickle!"
+  catch
+    MsgBox "No N/As Present. Report is good for Pickle!"
 End Sub
-
 
                                                         
                                                         
