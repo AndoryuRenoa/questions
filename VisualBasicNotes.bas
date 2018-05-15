@@ -50,7 +50,9 @@ Windows("LogsReport.xlsx").Activate
     Range("G2").Select
     Application.CutCopyMode = False
     Application.CutCopyMode = False
-    ActiveCell.FormulaR1C1 = _
+                            '!critical! BOB Report name must match VLOOKUP 2nd Parameter
+                       
+                            ActiveCell.FormulaR1C1 = _
                                             "=VLOOKUP(RC[1],'[BOBReport.xlsx]2Q 2018'!C1:C11,5,FALSE)"
                             'notice "-1" due to deleting the report's header
     Selection.AutoFill Destination:=Range("G2:G" & lastRowNum - 1)
