@@ -13,12 +13,8 @@ lastCol = ActiveSheet.Range("a1").End(xlToRight).Column
 lastRow = ActiveSheet.Cells(65536, lastCol).End(xlUp).Row
 lastRowNum = Range("G2").CurrentRegion.Rows.Count
 'this will allow entire ranges to be selected instead of what is limited by recording the macro
-' https://stackoverflow.com/questions/4850738/how-to-select-all-the-cells-in-a-worksheet-in-excel-range-object-of-c
-' https://support.microsoft.com/en-us/help/291308/how-to-select-cells-ranges-by-using-visual-basic-procedures-in-excel
-' below is a recorded macro for merging p-logs process
-' ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).Select
-' alternatively : ActiveSheet.Range("a1").CurrentRegion.Select however will not work if blank rows/columns etc
-'Change name to LogsReport
+
+'Changing name to LogsReport
 Windows("LogsReport.xlsx").Activate
     Rows("1:1").Select
     Selection.Delete Shift:=xlUp
