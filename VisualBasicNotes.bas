@@ -4,7 +4,8 @@ Sub Merge()
 '
     ' this code will correctly merge SVR & Bob Reports
     ' updated to include Will's name change comment
-    ' updated to incldue Message for if N/As are present or not
+    ' updated to include Message for if N/As are present or not (current method is dangerous anything that throws error #91 will produce
+    ' this message *For future development*)
     ' last update to include name changes for dates
 '
 'should include variables:
@@ -74,6 +75,8 @@ Windows("LogsReport.xlsx").Activate
     Application.Top = 40.75
     ActiveWindow.SmallScroll Down:=21
     ' Cannot use try catch statments in VBA so instead we will use the error number to go to a command line
+                                    'Note this is dangerous anything throwing an error will now GoTo RefErr and if value is present in a
+                                    'case it will run that script
                                     On Error GoTo RefErr:
                                     'search for #N/A will throw an error if not present
         Cells.Find(What:="#N/A", After:=ActiveCell, LookIn:=xlFormulas, LookAt _
