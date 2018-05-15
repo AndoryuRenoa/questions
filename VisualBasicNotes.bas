@@ -4,7 +4,8 @@ Sub Merge()
 '
     ' this code will correctly merge SVR & Bob Reports
     ' updated to include Will's name change comment
-    'to further implement Filter off; Error for N/A's Agency
+    ' updated to incldue Message for if N/As are present or not
+    ' last update to include name changes for dates
 '
 'should include variables:
 lastCol = ActiveSheet.Range("a1").End(xlToRight).Column
@@ -86,6 +87,9 @@ RefErr:
                                         End
                                         End Select
 End Sub
+
+                                                        
+
 
                                                         
                                                         
