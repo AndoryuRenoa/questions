@@ -3,7 +3,8 @@ Sub Merge()
 ' 
 '
     ' this code will correctly merge SVR & Bob Reports
-'
+    ' updated to include Will's name change comment
+    'to further implement Filter off; Error for N/A's Agency
 '
 'should include variables:
 lastCol = ActiveSheet.Range("a1").End(xlToRight).Column
@@ -32,7 +33,8 @@ lastRowNum = Range("G2").CurrentRegion.Rows.Count
     Selection.NumberFormat = "General"
     Range("F19").Select
     Application.WindowState = xlNormal
-    Windows("BOBReportTest.xlsx").Activate
+            'changing name to BOBReport
+    Windows("BOBReport.xlsx").Activate
     ActiveSheet.Shapes.Range(Array("Generic_DISH")).Select
     Selection.Delete
     Rows("1:8").Select
@@ -42,13 +44,14 @@ lastRowNum = Range("G2").CurrentRegion.Rows.Count
         TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
         Semicolon:=False, Comma:=False, Space:=False, Other:=True, OtherChar _
         :="-", FieldInfo:=Array(Array(1, 1), Array(2, 1)), TrailingMinusNumbers:=True
-                                        Windows("PreLogsTest.xlsx").Activate
+                        ' updating name from prelogstest to LogsReport
+                        Windows("LogsReport.xlsx").Activate
     Range("G2").Select
     Application.CutCopyMode = False
     Application.CutCopyMode = False
     ActiveCell.FormulaR1C1 = _
                                             "=VLOOKUP(RC[1],'[BOBReportTest.xlsx]2Q 2018'!C1:C11,5,FALSE)"
-                            'notice "-2" due to the way the report's header
+                            'notice "-1" due to deleting the report's header
     Selection.AutoFill Destination:=Range("G2:G" & lastRowNum - 1)
     ActiveSheet.Range("G2").End(xlDown).Select
     Columns("G:G").Select
