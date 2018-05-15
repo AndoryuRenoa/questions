@@ -51,7 +51,7 @@ Windows("LogsReport.xlsx").Activate
     Application.CutCopyMode = False
     Application.CutCopyMode = False
     ActiveCell.FormulaR1C1 = _
-                                            "=VLOOKUP(RC[1],'[BOBReportTest.xlsx]2Q 2018'!C1:C11,5,FALSE)"
+                                            "=VLOOKUP(RC[1],'[BOBReport.xlsx]2Q 2018'!C1:C11,5,FALSE)"
                             'notice "-1" due to deleting the report's header
     Selection.AutoFill Destination:=Range("G2:G" & lastRowNum - 1)
     ActiveSheet.Range("G2").End(xlDown).Select
