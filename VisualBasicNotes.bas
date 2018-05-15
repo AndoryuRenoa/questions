@@ -16,7 +16,8 @@ lastRowNum = Range("G2").CurrentRegion.Rows.Count
 ' below is a recorded macro for merging p-logs process
 ' ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).Select
 ' alternatively : ActiveSheet.Range("a1").CurrentRegion.Select however will not work if blank rows/columns etc
-    Windows("PreLogsTest.xlsx").Activate
+'Change name to LogsReport
+Windows("LogsReport.xlsx").Activate
     Rows("1:1").Select
     Selection.Delete Shift:=xlUp
     Cells.Select
