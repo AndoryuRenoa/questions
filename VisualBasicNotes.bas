@@ -93,13 +93,10 @@ RefErr:
                                         MsgBox "No N/As Present. Report is good for Pickle!"
                                         End
                                     Case 9
-                                        MsgBox "Either Both Windows are not open or they have not been saved correctly"
+                                        MsgBox "Either Both Windows are not open or they have not been saved correctly as BOBReport.xlsx and LogsReport.xlsx"
                                         End
                                         End Select
 End Sub
-
-                                   
-
 
                                                         
 
