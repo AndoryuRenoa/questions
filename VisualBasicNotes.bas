@@ -17,6 +17,7 @@ On Error GoTo RefErr:
 Windows("LogsReport.xlsx").Activate
 'activating both windows first so error throws prior to formatting if one isn't present or misnamed
 Windows("BOBReport.xlsx").Activate
+    ' can initialize a variable here to replace Q2 2018 while BOBReport is active
 Windows("LogsReport.xlsx").Activate
 
     'variables (for LogsReport):
