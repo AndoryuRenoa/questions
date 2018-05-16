@@ -16,6 +16,9 @@ lastRow = ActiveSheet.Cells(65536, lastCol).End(xlUp).Row
 lastRowNum = Range("G2").CurrentRegion.Rows.Count
 'this will allow entire ranges to be selected instead of what is limited by recording the macro
 
+' using error reference to give indication as to possible reasons the program will not save
+On Error GoTo RefErr:
+
 'Changing name to LogsReport
 Windows("LogsReport.xlsx").Activate
 'activating both windows first so error throws prior to formatting if one isn't present or misnamed
@@ -79,7 +82,6 @@ Windows("LogsReport.xlsx").Activate
     ' Cannot use try catch statments in VBA so instead we will use the error number to go to a command line
                                     'Note this is dangerous anything throwing an error will now GoTo RefErr and if value is present in a
                                     'case it will run that script
-                                    On Error GoTo RefErr:
                                     'search for #N/A will throw an error if not present
         Cells.Find(What:="#N/A", After:=ActiveCell, LookIn:=xlFormulas, LookAt _
         :=xlPart, SearchOrder:=xlByRows, SearchDirection:=xlNext, MatchCase:= _
@@ -90,8 +92,14 @@ RefErr:
                                     Case 91
                                         MsgBox "No N/As Present. Report is good for Pickle!"
                                         End
+                                    Case 9
+                                        MsgBox "Either Both Windows are not open or they have not been saved correctly"
+                                        End
                                         End Select
 End Sub
+
+                                   
+
 
                                                         
 
