@@ -19,7 +19,7 @@ Windows("LogsReport.xlsx").Activate
 Windows("BOBReport.xlsx").Activate
 Windows("LogsReport.xlsx").Activate
 
-'variables:
+    'variables (for LogsReport):
 lastCol = ActiveSheet.Range("a1").End(xlToRight).Column
 lastRow = ActiveSheet.Cells(65536, lastCol).End(xlUp).Row
 lastRowNum = Range("G2").CurrentRegion.Rows.Count
@@ -43,7 +43,7 @@ lastRowNum = Range("G2").CurrentRegion.Rows.Count
     Range("F19").Select
     Application.WindowState = xlNormal
    
-            'changing name to BOBReport
+            'changing active window to BOBReport
     Windows("BOBReport.xlsx").Activate
     ActiveSheet.Shapes.Range(Array("Generic_DISH")).Select
     Selection.Delete
@@ -54,7 +54,8 @@ lastRowNum = Range("G2").CurrentRegion.Rows.Count
         TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
         Semicolon:=False, Comma:=False, Space:=False, Other:=True, OtherChar _
         :="-", FieldInfo:=Array(Array(1, 1), Array(2, 1)), TrailingMinusNumbers:=True
-                        ' updating name to LogsReport
+                        
+                        ' changes active window to LogsReport
                         Windows("LogsReport.xlsx").Activate
     Range("G2").Select
     Application.CutCopyMode = False
@@ -81,7 +82,7 @@ lastRowNum = Range("G2").CurrentRegion.Rows.Count
     Application.Left = 38.5
     Application.Top = 40.75
     ActiveWindow.SmallScroll Down:=21
-    ' Cannot use try catch statments in VBA so instead we will use the error number to go to a command line
+                  ' Cannot use try catch statments in VBA macro so instead we will use the error number to go to a command line
                                     'Note this is dangerous anything throwing an error will now GoTo RefErr and if value is present in a
                                     'case it will run that script
                                     'search for #N/A will throw an error if not present
