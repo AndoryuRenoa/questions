@@ -1,4 +1,4 @@
-' Macro Name has to match Sub Name
+' Good Practice to have Macro Name match Sub Name
 Sub Merge()
 '
 '
@@ -6,15 +6,9 @@ Sub Merge()
     ' updated to include Will's name change comment
     ' updated to include Message for if N/As are present or not (current method is dangerous anything that throws error #91 will produce
     ' this message *For future development*)
-    ' may be a good idea to try to activate both windows first, that way if one is missing error will throw prior to any formatting
-    ' including that now
-    ' last update to include name changes for dates
-'
-'should include variables:
-lastCol = ActiveSheet.Range("a1").End(xlToRight).Column
-lastRow = ActiveSheet.Cells(65536, lastCol).End(xlUp).Row
-lastRowNum = Range("G2").CurrentRegion.Rows.Count
-'this will allow entire ranges to be selected instead of what is limited by recording the macro
+    ' updated to run check to see if both windows are open, pop message now prompts user to check both windows and file names if this fails
+    ' requires update to include name changes for dates
+    ' requires update to change cell title Q2 2018 with variable so this does not need to be updated every quarter
 
 ' using error reference to give indication as to possible reasons the program will not save
 On Error GoTo RefErr:
@@ -24,12 +18,19 @@ Windows("LogsReport.xlsx").Activate
 'activating both windows first so error throws prior to formatting if one isn't present or misnamed
 Windows("BOBReport.xlsx").Activate
 Windows("LogsReport.xlsx").Activate
+
+'variables:
+lastCol = ActiveSheet.Range("a1").End(xlToRight).Column
+lastRow = ActiveSheet.Cells(65536, lastCol).End(xlUp).Row
+lastRowNum = Range("G2").CurrentRegion.Rows.Count
+'^this will allow entire ranges to be selected
+
 'Formatting begins below
     Rows("1:1").Select
     Selection.Delete Shift:=xlUp
     Cells.Select
     Selection.AutoFilter
-        ' V replace with ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).Select
+' V I think this line is redundant, remove and test w.out
     ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).AutoFilter Field:=1, Criteria1:="="
         ' V replace with Rows (lastRow) however need to check if last row is actually last row i think it is due to .End(xlUp)
     ActiveSheet.Range("a1", ActiveSheet.Cells(lastRow, lastCol)).AutoFilter Field:=1
@@ -41,6 +42,7 @@ Windows("LogsReport.xlsx").Activate
     Selection.NumberFormat = "General"
     Range("F19").Select
     Application.WindowState = xlNormal
+   
             'changing name to BOBReport
     Windows("BOBReport.xlsx").Activate
     ActiveSheet.Shapes.Range(Array("Generic_DISH")).Select
@@ -52,7 +54,7 @@ Windows("LogsReport.xlsx").Activate
         TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=False, Tab:=False, _
         Semicolon:=False, Comma:=False, Space:=False, Other:=True, OtherChar _
         :="-", FieldInfo:=Array(Array(1, 1), Array(2, 1)), TrailingMinusNumbers:=True
-                        ' updating name from prelogstest to LogsReport
+                        ' updating name to LogsReport
                         Windows("LogsReport.xlsx").Activate
     Range("G2").Select
     Application.CutCopyMode = False
