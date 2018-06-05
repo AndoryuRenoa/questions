@@ -1,0 +1,3 @@
+http://tutorials.jenkov.com/java/lambda-expressions.html
+
+https://www.mkyong.com/spring-boot/spring-boot-ajax-example/
