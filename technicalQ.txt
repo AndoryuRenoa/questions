@@ -3,3 +3,5 @@ http://tutorials.jenkov.com/java/lambda-expressions.html
 https://www.mkyong.com/spring-boot/spring-boot-ajax-example/
 
 https://www.youtube.com/watch?v=pZamJ34AUr8
+
+http://www.objectdb.com/java/jpa/entity/persistence-unit
