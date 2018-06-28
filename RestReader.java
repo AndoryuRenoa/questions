@@ -20,7 +20,7 @@ public class RestReader {
 	public static void main(String[] args) {
           try {
 
-            URL url = new URL("http://mochijump.com/test/returnAll");//your url i.e fetch data from .
+            URL url = new URL("http://mochijump.com/test/returnAll");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             if (conn.getResponseCode() != 200) {
@@ -35,9 +35,9 @@ public class RestReader {
                 System.out.println(output);
             }
 	/*
-		try {
-		= mapper.readValue(output);
-		uRepository.save(i);
+	     try {
+		RectangleClass rC = mapper.readValue(output);
+		RectangleClass.save(i);
 		} catch (JsonMappingException e) {
 		    e.printStackTrace();
 		} catch (JsonGenerationException e) {
