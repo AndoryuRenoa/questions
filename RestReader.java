@@ -36,7 +36,7 @@ public class RestReader {
             }
 	/*
 	     try {
-		RectangleClass rC = mapper.readValue(output);
+		RectangleClass rC = mapper.readValue(output, RectangleClass.class);
 		RectangleClass.save(i);
 		} catch (JsonMappingException e) {
 		    e.printStackTrace();
