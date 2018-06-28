@@ -30,9 +30,26 @@ public class RestReader {
             InputStreamReader in = new InputStreamReader(conn.getInputStream());
             BufferedReader br = new BufferedReader(in);
             String output;
+		  // this is strange this while statement:
             while ((output = br.readLine()) != null) {
                 System.out.println(output);
             }
+	/*
+		try {
+		= mapper.readValue(output);
+		uRepository.save(i);
+		} catch (JsonMappingException e) {
+		    e.printStackTrace();
+		} catch (JsonGenerationException e) {
+		    e.printStackTrace();
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
+	* ^ If we're accepting all input here we need to start with an array of JSON, then convert the array into individual instances
+	* overloading a class which contains the internal values startX, startY, width, height...
+	* let's try to get a single rectange first, and print to console the characteristics for that rectangle
+	*/
+	
             conn.disconnect();
 
         } catch (Exception e) {
