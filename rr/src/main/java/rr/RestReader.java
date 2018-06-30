@@ -1,7 +1,6 @@
 package rr;
 /*
-* prior to incorporating this function in my mochijump app I will test it out standing alone first
-* could test below first, but I want to use the Jackson API to unmarshal the JSON received, that will need to be included as a dependancy
+* next step make class to overload with json
 *
 */
 import java.io.BufferedReader;
