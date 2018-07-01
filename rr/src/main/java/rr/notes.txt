@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/41989906/jackson-referencing-an-object-as-a-property
