@@ -1,0 +1,67 @@
+	body {
+		background-color: lightgray;
+	}
+	
+	.modal {
+    visibility:hidden;
+    position: fixed;
+    z-index: 1; 
+    padding-top: 10px; 
+    left: 25%;
+    top: 5%;
+    width: 50%; 
+    overflow: auto; 
+	border-radius: 25px;
+    border: 2px solid #5c6a82;
+    background-color: rgb(130, 146, 173); 
+    background-color: rgb(130, 146, 173,1); 
+	}
+	.aboutButton{
+	display: flex; justify-content: center
+	}
+
+	.mochiIcon{
+	  position: fixed;
+	  top: 20%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	}
+	.container1{	
+		position: fixed;
+		margin-bottom: 10%;
+	  width: 100%;
+	  top: 50%;
+	  display: inline-flex;
+	  flex-direction: row;
+	  align-items: center;
+	}
+	.option1{
+
+	}
+	.selectorimg1{
+	float: right;
+
+	}
+	.selector1, .right1{
+	  flex: 1;
+	}
+
+	.container2{
+		position: fixed;
+		margin-top: 15%;
+	  width: 100%;
+	  top: 50%;
+	  display: inline-flex;
+	  flex-direction: row;
+	  align-items: center;
+	}
+	.option2{
+
+	}
+	.selectorimg2{
+	float: right;
+
+	}
+	.selector2, .right2{
+	  flex: 1;
+	}
